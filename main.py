@@ -52,12 +52,17 @@ while True:
             if x<target[0]<x+w and y<target[1]<y+h:
                 c1, c2=(150,0,150), (200,200,200)
                 counter+=1
-
         else:
             c1, c2=purple, white
         cvzone.putTextRect(img, f'{int(distanceCM)} cm', (x+5,y-10))
         cv2.rectangle(img, (x-20,y-20),(x+w+20,y+h+20),purple,3)
-
+        if timer=='00:00':
+            if distanceCM<40 and x<700<x+w and y<550<y+h:
+                quit=True
+            if distanceCM<40 and x<400<x+w and y<550<y+h:
+                #RESTART
+                score=0
+                threading.Thread(target=countdown, args=(10,), daemon=True).start()
     if counter:
         if counter==4:
             target=(randint(100,1100),randint(100,600))
