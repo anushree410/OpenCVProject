@@ -22,9 +22,9 @@
    pip install -r requirements.txt
    
 3. Execute the Program
-```bash
-python.exe .\main.py
-```
+    ```bash
+    python.exe .\main.py
+    ```
 4. Exit the Application
 Press Q at any time to exit.
 
